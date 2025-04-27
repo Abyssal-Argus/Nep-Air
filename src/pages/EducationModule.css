@@ -1,0 +1,791 @@
+/* Base styles */
+:root {
+  --primary-color: #3498db;
+  --primary-light: #e3f2fd;
+  --primary-dark: #1976d2;
+  --text-dark: #2c3e50;
+  --text-light: #7f8c8d;
+  --white: #ffffff;
+  --light-gray: #f8f9fa;
+  --border-color: #e0e0e0;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: var(--text-dark);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.education-module {
+  overflow-x: hidden;
+  background-attachment: fixed;
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.3;
+  margin-top: 0;
+  color: var(--text-dark);
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  margin-bottom: 1.5rem;
+  color: var(--text-dark);
+}
+
+/* Buttons */
+.btn-primary {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: none;
+  border-radius: 4px;
+  padding: 12px 24px;
+  font-weight: 500;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+/* Header */
+.site-header {
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+/* Hero Slider */
+.hero-slider {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.slider-container {
+  position: relative;
+  width: 100%;
+}
+
+.slider-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.slide {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  max-height: 600px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 0 20px;
+}
+
+.slide-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
+  color: var(--white);
+  display: flex;
+  align-items: center;
+}
+
+.slide-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--white);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.slide-subtitle {
+  font-size: 1.25rem;
+  max-width: 600px;
+  margin-bottom: 2rem;
+  color: var(--white);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  color: var(--primary-dark);
+}
+
+.slider-arrow:hover {
+  background: var(--white);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  color: var(--primary-color);
+}
+
+.slider-arrow.left {
+  left: 0;
+}
+
+.slider-arrow.right {
+  right: 0;
+}
+
+.slider-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background-color: var(--white);
+  transform: scale(1.2);
+}
+
+/* Section Header */
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: var(--primary-dark);
+}
+
+.section-description {
+  max-width: 700px;
+  margin: 0 auto;
+  color: var(--text-dark);
+  font-size: 1.1rem;
+}
+
+/* Education Tabs */
+.education-tabs-section {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 3rem 0;
+  margin: 3rem 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.tabs-container {
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--white);
+}
+
+.tabs-header {
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  background-color: var(--primary-light);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.tabs-header::-webkit-scrollbar {
+  display: none;
+}
+
+.tab-btn {
+  padding: 1rem 1.5rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--text-dark);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  position: relative;
+}
+
+.tab-btn.active {
+  color: var(--primary-color);
+  background-color: var(--white);
+}
+
+.tab-btn.active:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--primary-color);
+}
+
+.tab-btn:hover:not(.active) {
+  color: var(--primary-dark);
+  background-color: rgba(52, 152, 219, 0.1);
+}
+
+.tab-content {
+  padding: 2rem;
+  min-height: 400px;
+  background-color: var(--white);
+}
+
+/* Introduction Tab */
+.intro-section, .health-effects-section, .pollutants-section, 
+.time-effects-section, .sources-section, .seasonal-section,
+.methods-section, .importance-section, .protection-section,
+.community-section {
+  margin-bottom: 2.5rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.intro-section h3,
+.health-effects-section h3,
+.pollutants-section h3 {
+  margin-bottom: 1rem;
+  color: var(--primary-dark);
+  border-bottom: 2px solid var(--primary-light);
+  padding-bottom: 0.5rem;
+}
+
+/* AQI Scale Chart */
+.aqi-scale-chart {
+  display: flex;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 1.5rem 0;
+  box-shadow: var(--shadow);
+}
+
+.aqi-level {
+  flex: 1;
+  padding: 1rem;
+  text-align: center;
+  color: var(--text-dark);
+  position: relative;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.aqi-level:hover {
+  transform: scale(1.05);
+  z-index: 1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.level-range {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--white);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.level-name {
+  font-size: 0.9rem;
+  color: var(--white);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.level-tooltip {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--white);
+  color: var(--text-dark);
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  box-shadow: var(--shadow);
+  width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 100;
+}
+
+.level-tooltip:after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: var(--white) transparent transparent transparent;
+}
+
+.aqi-level:hover .level-tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Pollutants Grid */
+.pollutants-grid, .health-effects-grid, .sources-grid,
+.methods-grid, .importance-grid, .protection-grid,
+.community-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.pollutant-card, .health-card, .source-card, .method-card,
+.importance-card, .protection-card, .action-card {
+  background-color: var(--white);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+  color: var(--text-dark);
+}
+
+.pollutant-card:hover, .health-card:hover, .source-card:hover,
+.method-card:hover, .importance-card:hover, .protection-card:hover,
+.action-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.pollutant-header, .health-header, .protection-header {
+  background-color: var(--primary-light);
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.pollutant-header h4, .health-header h4, .protection-header h4 {
+  margin: 0;
+  color: var(--primary-dark);
+}
+
+.pollutant-details {
+  padding: 1rem;
+}
+
+.detail-item {
+  margin-bottom: 0.75rem;
+}
+
+.detail-item strong {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.25rem;
+  color: var(--primary-dark);
+}
+
+.detail-item p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+}
+
+/* Health Effects Lists */
+.health-effects-list, .protection-tips-list {
+  padding-left: 1.25rem;
+  margin: 0.5rem 0;
+}
+
+.health-effects-list li, .protection-tips-list li {
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+}
+
+/* Time Effects Section */
+.time-effects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.time-effect-card {
+  background-color: var(--white);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+}
+
+.time-effect-card h5 {
+  color: var(--primary-dark);
+  margin-top: 0;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--primary-light);
+}
+
+.time-effect-card ul {
+  padding-left: 1.25rem;
+  margin: 0;
+}
+
+.time-effect-card li {
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+}
+
+/* Source Card */
+.source-card {
+  padding: 1.5rem;
+}
+
+.source-card h5 {
+  color: var(--primary-dark);
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.source-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+}
+
+/* Method Card */
+.method-card {
+  padding: 1.5rem;
+}
+
+.method-card h5 {
+  color: var(--primary-dark);
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.method-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+}
+
+/* Importance Card */
+.importance-card {
+  padding: 1.5rem;
+}
+
+.importance-text h5 {
+  color: var(--primary-dark);
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.importance-text p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+}
+
+/* Action Card */
+.action-card {
+  padding: 1.5rem;
+}
+
+.action-text h5 {
+  color: var(--primary-dark);
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.action-text p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+}
+
+/* Seasonal Content */
+.seasonal-content {
+  background-color: var(--primary-light);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--primary-color);
+}
+
+.seasonal-content p {
+  margin-top: 0;
+  color: var(--text-dark);
+}
+
+.seasonal-content ul {
+  padding-left: 1.25rem;
+}
+
+.seasonal-content li {
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+}
+
+/* News Section */
+.news-section {
+  padding: 4rem 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  margin: 3rem 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.news-card {
+  background-color: var(--white);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.news-image-container {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.news-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+.news-card:hover .news-image {
+  transform: scale(1.05);
+}
+
+.news-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.news-overlay.active,
+.news-card:hover .news-overlay {
+  opacity: 1;
+}
+
+.news-link {
+  display: inline-block;
+  background-color: var(--white);
+  color: var(--primary-dark);
+  padding: 0.75rem 1.25rem;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.news-link:hover {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.news-title {
+  padding: 1.25rem;
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--text-dark);
+}
+
+/* Resources Section */
+.resources-section {
+  padding: 4rem 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  margin: 3rem 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.resource-card {
+  background-color: var(--primary-light);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.resource-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.resource-content {
+  padding: 1.5rem;
+  flex: 1;
+}
+
+.resource-title {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--primary-dark);
+}
+
+.resource-description {
+  color: var(--text-dark);
+  margin-bottom: 0;
+}
+
+.resource-link {
+  display: block;
+  padding: 1rem;
+  text-align: center;
+  background-color: var(--primary-color);
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.resource-link:hover {
+  background-color: var(--primary-dark);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .slide {
+    height: 60vh;
+  }
+  
+  .slide-title {
+    font-size: 2rem;
+  }
+  
+  .tab-btn {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .pollutants-grid, .health-effects-grid, .sources-grid, 
+  .methods-grid, .importance-grid, .protection-grid, 
+  .community-grid, .news-grid, .resources-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .seasonal-content {
+    padding: 1rem;
+  }
+  
+  .slider-arrow {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .section-description {
+    font-size: 1rem;
+  }
+  
+  .slide-title {
+    font-size: 1.5rem;
+  }
+  
+  .tab-content {
+    padding: 1.5rem;
+  }
+  
+  .tabs-header {
+    flex-wrap: wrap;
+  }
+  
+  .tab-btn {
+    flex: 1 0 50%;
+    text-align: center;
+  }
+}

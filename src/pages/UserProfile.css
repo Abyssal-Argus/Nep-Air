@@ -1,0 +1,359 @@
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.profile-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.profile-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+.profile-glass-container {
+  width: 100%;
+  max-width: 1000px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.profile-glass-container:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+.profile-card {
+  padding: 2.5rem;
+}
+
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.profile-header h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: #2c3e50;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.profile-icon, .section-icon {
+  font-size: 1.5rem;
+  color: #3498db;
+}
+
+.profile-sections {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.profile-section {
+  background: rgba(255, 255, 255, 0.7);
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.profile-section h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+  color: #3498db;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.profile-field {
+  margin-bottom: 1.2rem;
+}
+
+.profile-field label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 0.9rem;
+}
+
+.profile-value {
+  padding: 0.6rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  border-left: 3px solid #3498db;
+}
+
+.profile-input, .profile-select {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.profile-input:focus, .profile-select:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.multi-field-item {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  align-items: center;
+}
+
+.multi-field-item .profile-input {
+  flex: 1;
+}
+
+/* Buttons */
+.edit-btn, .save-btn, .cancel-btn, .add-item-btn, .remove-item-btn {
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.edit-btn {
+  background: linear-gradient(135deg, #3498db, #2c3e50);
+  color: white;
+}
+
+.edit-btn:hover {
+  background: linear-gradient(135deg, #2980b9, #1a252f);
+  transform: translateY(-2px);
+}
+
+.save-btn {
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  color: white;
+}
+
+.save-btn:hover {
+  background: linear-gradient(135deg, #27ae60, #219653);
+  transform: translateY(-2px);
+}
+
+.cancel-btn {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: white;
+}
+
+.cancel-btn:hover {
+  background: linear-gradient(135deg, #c0392b, #a93226);
+  transform: translateY(-2px);
+}
+
+.add-item-btn {
+  background: rgba(52, 152, 219, 0.1);
+  color: #3498db;
+  border: 1px dashed #3498db;
+  margin-top: 0.5rem;
+}
+
+.add-item-btn:hover {
+  background: rgba(52, 152, 219, 0.2);
+}
+
+.remove-item-btn {
+  background: rgba(231, 76, 60, 0.1);
+  color: #e74c3c;
+  border: 1px solid rgba(231, 76, 60, 0.3);
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  padding: 0;
+}
+
+.remove-item-btn:hover {
+  background: rgba(231, 76, 60, 0.2);
+}
+
+/* Toggle Switch */
+.toggle-switch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2ecc71;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2ecc71;
+}
+
+input:checked + .slider:before {
+  transform: translateX(30px);
+}
+
+.toggle-label {
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Status Indicators */
+.subscribed {
+  color: #2ecc71;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.not-subscribed {
+  color: #e74c3c;
+  font-weight: 600;
+}
+
+/* Loading State */
+.profile-loading {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #3498db;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Profile Actions */
+.profile-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  justify-content: flex-end;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .profile-sections {
+    grid-template-columns: 1fr;
+  }
+  
+  .profile-card {
+    padding: 1.5rem;
+  }
+  
+  .profile-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .profile-actions {
+    flex-direction: column;
+  }
+  
+  .profile-actions button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-page {
+    padding: 1rem;
+  }
+  
+  .profile-card {
+    padding: 1rem;
+  }
+}
